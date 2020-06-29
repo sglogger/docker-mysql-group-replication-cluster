@@ -85,5 +85,5 @@ Please check ./3_start-repl.sh
 
 ### Helpful Links 
  - https://dev.mysql.com/doc/refman/5.7/en/replication.html
- -  https://github.com/wagnerjfr/mysql-group-replication-docker
+ - https://github.com/wagnerjfr/mysql-group-replication-docker
  - https://mysqlhighavailability.com/setting-up-mysql-group-replication-with-mysql-docker-images/
