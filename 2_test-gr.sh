@@ -2,7 +2,7 @@
 
 RESULT_FILE="test.txt"
 
-docker exec -t mysqldb1 mysql -uroot -pabcd \
+docker exec -t mysqldb1 mysql -uroot -pmypassword \
   -e "SHOW VARIABLES WHERE Variable_name = 'hostname';" \
   -e "SELECT * FROM performance_schema.replication_group_members;" > $RESULT_FILE
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker exec -t mysqldb1 mysql -uroot -pabcd \
+docker exec -t mysqldb1 mysql -uroot -pmypassword \
   -e "SET @@GLOBAL.group_replication_bootstrap_group=1;" \
   -e "create user 'repl'@'%';" \
   -e "GRANT REPLICATION SLAVE ON *.* TO repl@'%';" \
@@ -11,7 +11,7 @@ docker exec -t mysqldb1 mysql -uroot -pabcd \
   -e "SELECT * FROM performance_schema.replication_group_members;"
 
 for N in 2 3
-do docker exec -t mysqldb$N  mysql -uroot -pabcd \
+do docker exec -t mysqldb$N  mysql -uroot -pmypassword \
   -e "change master to master_user='repl' for channel 'group_replication_recovery';" \
   -e "START GROUP_REPLICATION;"
 done
