@@ -7,7 +7,7 @@ Docker and docker-compose are installed, up and running
 
 ## Step 1: get the files and bring them up ##
 - Clone the project
-- adjust the 'docker-compose.yml' to your needs
+- adjust the `docker-compose.yml to your needs
 - adjust the 'secret-mysql.env' file for your needs
 - adjust the shell scripts (1/2/3....sh) file for your needs
 
@@ -86,13 +86,13 @@ If you want to shutdown the containers just type 'docker-compose down' in the pa
 Please check ./3_start-repl.sh
 
 ## Thanks to ... ##
-Thanks to Franchin (@wagnerjfr) for the support and inspiration
+Thanks to Franchin @wagnerjfr for the support and inspiration
 
 
 
 ## Helpful Links ##
 - https://mysqlhighavailability.com/setting-up-mysql-group-replication-with-mysql-docker-images/
-- https://dev.mysql.com/doc/refman/5.7/en/replication.html
+- https://dev.mysql.com/doc/refman/8.0/en/replication.html
 - https://github.com/wagnerjfr/mysql-group-replication-docker
 - https://github.com/wagnerjfr/mysql-group-replication-docker-compose
 
