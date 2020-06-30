@@ -2,13 +2,14 @@
 This is using master-only-nodes (no slaves/secondaries)
 
 
-### Prerequisites ###
-Docker and docker-compose are installed
+## Prerequisites ##
+Docker and docker-compose are installed, up and running
 
-### Step 1: get the files and bring them up
+## Step 1: get the files and bring them up ##
 - Clone the project
-- adjust the docker-compose.yml to your needs
-- adjust the secret-mysql.env file for your needs
+- adjust the 'docker-compose.yml' to your needs
+- adjust the 'secret-mysql.env' file for your needs
+- adjust the shell scripts (1/2/3....sh) file for your needs
 
 ```
 docker-compose up -d
@@ -22,8 +23,8 @@ Creating mysqldb1
 Creating mysqldb3 ... done
 ```
 
-### Step 2: when all containers are up > start replication ###
-Check with "docker ps" if the status is "healthy"
+## Step 2: when all containers are up > start replication ##
+Check with "docker ps" if the status is 'Up ... (health: healthy)'
 
 ```
 steven@docker2:~/docker-repository/mysql-gr-cluster-working$ docker ps
@@ -55,7 +56,7 @@ mysql: [Warning] Using a password on the command line interface can be insecure.
 mysql: [Warning] Using a password on the command line interface can be insecure.
 ```
 
-### Step 3: check replication #
+## Step 3: check replication ##
 execute ./2_test-gr.sh:
 ```
 steven@docker2:~/docker-repository/mysql-gr-cluster-working$ ./2_test-gr.sh
@@ -75,15 +76,23 @@ mysql: [Warning] Using a password on the command line interface can be insecure.
 Test check passed, 3 nodes ONLINE
 ```
 
-
 Done :)
 
-### Restarted Container / not in Sync ###
+## Shutdown / Remove ##
+If you want to shutdown the containers just type 'docker-compose down' in the path, where you specified the file 'docker-compose.yml'
+
+
+## Restarted Container / not in Sync ##
 Please check ./3_start-repl.sh
 
+## Thanks to ... ##
+Thanks to Franchin (@wagnerjfr) for the support and inspiration
 
 
-### Helpful Links 
- - https://dev.mysql.com/doc/refman/5.7/en/replication.html
- - https://github.com/wagnerjfr/mysql-group-replication-docker
- - https://mysqlhighavailability.com/setting-up-mysql-group-replication-with-mysql-docker-images/
+
+## Helpful Links ##
+- https://mysqlhighavailability.com/setting-up-mysql-group-replication-with-mysql-docker-images/
+- https://dev.mysql.com/doc/refman/5.7/en/replication.html
+- https://github.com/wagnerjfr/mysql-group-replication-docker
+- https://github.com/wagnerjfr/mysql-group-replication-docker-compose
+
