@@ -7,7 +7,7 @@ Docker and docker-compose are installed, up and running
 
 ## Step 1: get the files and bring them up ##
 - Clone the project
-- adjust the `docker-compose.yml to your needs
+- adjust the `docker-compose.yml` to your needs
 - adjust the 'secret-mysql.env' file for your needs
 - adjust the shell scripts (1/2/3....sh) file for your needs
 
